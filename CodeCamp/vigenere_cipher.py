@@ -2,13 +2,30 @@
 Learn String Manipulation by Building a Cipher.
 """
 
-import os
+# https://www.freecodecamp.org/learn/scientific-computing-with-python/
+# https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+# https://www.geeksforgeeks.org/vigenere-cipher/
 
-# text = 'mrttaqrhknsw ih puggrur'
-# custom_key = 'happycoding'
+import os
 
 
 def vigenere(message, key, direction=1):
+    """Vigenère cipher function.
+    
+    The Vigenère cipher (French pronunciation: [viʒnɛ:ʁ]) is
+    a method of encrypting alphabetic text where each letter
+    of the plaintext is encoded with a different Caesar cipher,
+    whose increment is determined by the corresponding letter
+    of another text, the key.
+    
+    Parameters:
+        message     - the text to encrypt/decrypt;
+        key         - the key for encrypt/decrypt;
+        direction   - if 1 - encrypt action;
+                    - if -1 - decrypt action.
+    """
+    
+    # Initializing variables:
     key_index = 0
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     final_message = ''
@@ -33,10 +50,12 @@ def vigenere(message, key, direction=1):
 
 
 def encrypt(message, key):
+    """The function to call encryption."""
     return vigenere(message, key)
 
 
 def decrypt(message, key):
+    """The function to call decryption."""
     return vigenere(message, key, -1)
 
 
@@ -56,7 +75,7 @@ the program vigenere_ciper.py.')
         text = input('Input the text: ')
         custom_key = input('Input the key to encrypt/decryot: ').lower()
 
-        # The calculations & Output block:
+        # The call & Output block:
         if action == "1":
             print(f'\nText: {text}')
             print(f'Key: {custom_key}')
