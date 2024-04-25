@@ -21,8 +21,8 @@ def vigenere(message, key, direction=1):
     Parameters:
         message     - the text to encrypt/decrypt;
         key         - the key for encrypt/decrypt;
-        direction   - if 1 - encrypt action;
-                    - if -1 - decrypt action.
+        direction   =  1       encrypt action;
+                    = -1       decrypt action.
     """
     
     # Initializing variables:
