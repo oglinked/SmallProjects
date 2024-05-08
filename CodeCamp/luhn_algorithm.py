@@ -36,6 +36,7 @@ Canadian Social Insurance Numbers...
 # Sum 2-char digits   7   9  9  4  7  6  9   7  7  2  x
 
 import os
+import time
 
 
 def verify_card_number(card_number) -> bool:
@@ -114,12 +115,11 @@ def luhn_algorithm():
 
     os.system('cls')  # Clearing the Screen.
     # The Greeting.
-    print('\nHello Host!\nYou run the version 01.03 of \
+    print('\nHello Host!\nYou run the version 01.04 of \
 the program luhn_algorithm.py.')
 
     # The main loop:
-    k = 'continue'
-    while k not in ['q', 'Q']:
+    while True:
         # The Data Input:
         card_number = input('\nInput Card Number: ')
 
@@ -135,12 +135,15 @@ the program luhn_algorithm.py.')
             print(f'\nCard Number {card_number} is INVALID!')
 
         # The end of the main loop.
-        k = input('\nWould you like to input another \
+        _ = input('\nWould you like to input another \
 Card Number? \n(Press "q" to exit, or "ENTER" to continue): ')
+        if _ in ['q', 'Q']:
+            break
 
     input('Press "ENTER" to exit luhn_algorithm.py: ')  # Exit.
-    return
+    return print('Good JOB!')
 
 
 if __name__ == "__main__":
     luhn_algorithm()
+    time.sleep(2)
